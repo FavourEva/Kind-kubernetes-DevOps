@@ -1,0 +1,19 @@
+# Kubernetes YAML Configuration File for a Service Resource
+
+apiVersion: v1  # Specifies the API version for this Kubernetes resource.
+kind: Service  # Indicates the type of Kubernetes resource, which is a Service.
+
+metadata:  # Metadata section containing information about the Service.
+  name: app-service  # The Service's name, used for identification within the cluster.
+
+spec:  # The spec section defines the desired state of the Service.
+  type: ClusterIP  # Specifies the type of Service, which is ClusterIP in this case.
+
+  selector:  # The selector enables the Service to route traffic to Pods with specific labels.
+    app: app-deployment  # This selector matches Pods with the "app" label set to "app-deployment."
+
+  ports:  # The ports section specifies the ports exposed by the Service.
+    - name: app-deployment  # The port's name, which is "app-deployment" in this case.
+      protocol: TCP  # Indicates that the port uses the TCP protocol.
+      port: 5000  # Specifies the port on which the Service listens for incoming traffic.
+      targetPort: 3000  # The targetPort is the port on Pods that the Service forwards traffic to.

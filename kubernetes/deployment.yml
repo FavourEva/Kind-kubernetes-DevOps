@@ -1,0 +1,27 @@
+# Kubernetes YAML Configuration File for a Deployment Resource
+
+apiVersion: apps/v1  # Specifies the API version for this Kubernetes resource.
+kind: Deployment  # Indicates the type of resource, which is a Deployment.
+
+metadata:  # Metadata section for the Deployment resource.
+  name: app-deployment  # The assigned name for this Deployment resource.
+
+spec:  # Describes the desired state of the Deployment.
+  replicas: 1  # Specifies that one replica Pod should be maintained.
+
+  selector:  # Defines how Pods are selected for this Deployment.
+    matchLabels:  # Labels used to select Pods for this Deployment.
+      app: app-deployment  # Selects Pods with the label "app: app-deployment."
+
+  template:  # Describes the Pod template used for creating new Pods.
+    metadata:  # Metadata for the Pod template.
+      labels:  # Labels applied to Pods created from this template.
+        app: app-deployment  # Pods created will have the label "app: app-deployment."
+
+    spec:  # Specifies the Pod specification for newly created Pods.
+      containers:  # List of containers within the Pod.
+        - name: app-deployment  # Name of the container.
+          image: favoueva/kindimage:latest  # Docker image used for this container.
+          ports:  # Defines the ports exposed within the Pod.
+            - containerPort: 3000  # Port 3000 is exposed within the Pod.
+              name: app-deployment  # Container name (can be different from the Pod name).
