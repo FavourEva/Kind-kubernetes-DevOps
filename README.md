@@ -113,13 +113,13 @@ Follow these steps to deploy the Node.js and kube-prometheus stacks into the Kub
 Monitor the deployment status by running the following commands:
 
 - Check running deployments: `kubectl get deployments.app -n default --watch`.
-  ![Screenshot of Application](https://example.com/screenshot.png)
+  ![Screenshot](images/2023-09-19%20(1).png)
 
 - Check running pods: `kubectl get pods -n default --watch`.
-  ![Screenshot of Application](https://example.com/screenshot.png)
+  ![Screenshot of Application](images/2023-09-19%20(2).png)
 
 - Check running services: `kubectl get svc -n default --watch`.
-  ![Screenshot of Application](https://example.com/screenshot.png)
+  ![Screenshot of Application](images/2023-09-19%20(3).png)
 
 **Port Forwarding:**
 
@@ -132,7 +132,7 @@ To access the Node.js UI, use the following command:
 ```bash
 $ kubectl port-forward svc/app-service 5000:3000 --namespace default
 ```
-![Screenshot of Application](https://example.com/screenshot.png)
+![](images/2023-09-19.png)
 
 Open your web browser and visit: [http://localhost:5000/](http://localhost:5000/) to access the Node.js UI.
 
@@ -143,7 +143,7 @@ Access Prometheus by running:
 ```bash
 $ kubectl port-forward svc/kube-prometheus-stack-prometheus 5001:9090 --namespace default
 ```
-![Screenshot of Application](https://example.com/screenshot.png)
+![Screenshot](images/2023-09-19%20(5).png)
 
 Open your web browser and navigate to: [http://localhost:5001/](http://localhost:5001/) to access the Prometheus UI.
 
@@ -154,7 +154,7 @@ To access Alertmanager, utilize this command:
 ```bash
 $ kubectl port-forward svc/kube-prometheus-stack-alertmanager 5002:9093 --namespace default
 ```
-![Screenshot of Application](https://example.com/screenshot.png)
+![Screenshot](images/2023-09-19%20(4).png)
 
 Open your web browser and go to: [http://localhost:5002/](http://localhost:5002/) to access the Alertmanager UI.
 
@@ -165,7 +165,8 @@ To access Grafana, execute the following:
 ```bash
 $ kubectl port-forward svc/kube-prometheus-stack-grafana 5003:80 --namespace default
 ```
-![Screenshot of Application](https://example.com/screenshot.png)
+![Screenshot](images/2023-09-19%20(6).png)
+![Screenshot](images/2023-09-19%20(7).png)
 
 Open your web browser and visit: [http://localhost:5003/](http://localhost:5003/) to access the Grafana UI.
 
